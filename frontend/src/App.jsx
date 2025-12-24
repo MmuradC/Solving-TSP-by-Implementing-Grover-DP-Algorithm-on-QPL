@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Play, RefreshCw, Download, Info, Zap, Cpu, TrendingUp, Database, Activity, FileUp, X, BarChart3 } from 'lucide-react';
+{/*import { Play, RefreshCw, Download, Info, Zap, Cpu, TrendingUp, Database, Activity, FileUp, X, BarChart3 } from 'lucide-react';*/}
+import { Play, RefreshCw, Zap, Cpu, TrendingUp, Database, Activity } from 'lucide-react';
 
 function App() {
   const [cityCount, setCityCount] = useState(5);
@@ -17,7 +18,7 @@ function App() {
   useEffect(() => {
     generateMatrix();
     loadStatistics();
-    loadDatasetProgress();
+    {/*loadDatasetProgress();*/}
   }, [cityCount]);
 
   const loadStatistics = () => {
@@ -422,12 +423,12 @@ Quantum Speedup: ${speedup}x`}
           <button onClick={compareAllAlgorithms} disabled={loading} className="flex-1 min-w-[200px] bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 px-8 py-4 rounded-xl font-bold text-xl flex items-center justify-center gap-3">
             <TrendingUp className="w-6 h-6" />Compare All
           </button>
-          <button onClick={saveInstance} className="flex-1 min-w-[200px] bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 px-8 py-4 rounded-xl font-bold text-xl flex items-center justify-center gap-3">
+          {/*<button onClick={saveInstance} className="flex-1 min-w-[200px] bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 px-8 py-4 rounded-xl font-bold text-xl flex items-center justify-center gap-3">
             <Download className="w-6 h-6" />Save
-          </button>
+          </button>*/}
         </div>
 
-        <DatasetTable />
+        {/*<DatasetTable />*/}
         {algorithmResults.length > 0 && (
           <div className="mt-8">
             <AlgorithmComparison />
@@ -467,7 +468,7 @@ Quantum Speedup: ${speedup}x`}
             </div>
           </div>
         )}
-        <UploadModal />
+        {/*<UploadModal />*/}
       </div>
     </div>
   );
