@@ -1,0 +1,7 @@
+{
+  "apiUrl": "http://localhost:8000",
+  "defaultCityCount": 5,
+  "defaultQuantumThreshold": 3,
+  "maxCities": 10,
+  "minCities": 3
+}

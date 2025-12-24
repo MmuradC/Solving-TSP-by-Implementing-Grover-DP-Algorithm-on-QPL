@@ -1,0 +1,5 @@
+upload_id,filename,upload_date,num_instances,file_content
+UPLOAD_20251224_145526,dataset_progress.csv,2025-12-24T14:55:26.720536,0,"instance_id,name,num_cities,total_distance,best_route_category,quantum_time,classical_time,speedup,upload_date
+"
+UPLOAD_20251224_145534,tsp_instances_dataset.csv,2025-12-24T14:55:34.422947,0,"instance_id,name,num_cities,cost_matrix,created_at,optimal_cost
+"
