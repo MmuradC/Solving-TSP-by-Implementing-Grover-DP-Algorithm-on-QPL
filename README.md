@@ -8,41 +8,14 @@ Docs:
 
 ## Installation
 
-1. Install backend dependencies:
+1. Install dependencies:
 ```bash
 pip install -r requirements.txt
-
 ```
 
-2. Run the backend server:
-```bash (1)
-cd backend
-python main.py
+2. Run the server:
+```bash
+python app.py
 ```
 
-The API will be available at `http://localhost:8000`
-
-3. Run the frontend server:
-```bash (2)
-cd frontend
-npm install
-npm run dev
-```
-
-4. For the frontend, open the React artifact in Claude.ai or deploy it separately.
-
-## API Endpoints
-
-- `GET /` - API information
-- `POST /api/solve` - Solve TSP instance
-- `POST /api/compare` - Compare quantum vs classical algorithms
-- `GET /api/instances` - Get saved instances
-- `POST /api/instances` - Save new instance
-- `GET /api/statistics` - Get performance statistics
-
-## Algorithm Complexity
-
-- **Classical DP**: O(n² · 2ⁿ)
-- **Quantum-Enhanced DP**: O*(⌈c⌉⁴ · √(2ⁿ))
-
-Where n is the number of cities and c is the maximum edge weight.
+3. Ctrl + Click to connect the server

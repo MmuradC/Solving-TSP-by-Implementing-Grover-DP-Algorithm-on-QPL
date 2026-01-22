@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum TSP Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 Quantum TSP Solver</h1>
+            <p>Dynamic Programming with Grover's Algorithm</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Upload Section -->
+            <section class="card">
+                <h2>📁 Dataset Upload</h2>
+                <div class="upload-area">
+                    <input type="file" id="fileInput" accept=".csv" />
+                    <button onclick="uploadFile()" class="btn btn-primary">Upload Dataset</button>
+                </div>
+                <div id="datasetInfo" class="info-box" style="display:none;">
+                    <h3>Dataset Information</h3>
+                    <div id="statsContent"></div>
+                </div>
+            </section>
+
+            <!-- Randomize Section -->
+            <section class="card">
+                <h2>🎲 Randomize Values</h2>
+                <div class="randomize-controls">
+                    <label>Number of Cities: 
+                        <input type="number" id="numCities" min="3" max="10" value="5" />
+                    </label>
+                    <button onclick="randomizeValues()" class="btn btn-secondary">Generate Random</button>
+                </div>
+            </section>
+
+            <!-- Visualization Area -->
+            <section class="card">
+                <h2>📊 Visualization</h2>
+                <div id="visualizationArea" class="viz-container">
+                    <p style="text-align: center; color: #666; padding: 40px;">
+                        Upload a dataset or generate random values to see visualization
+                    </p>
+                </div>
+            </section>
+
+            <!-- Control Buttons -->
+            <section class="card">
+                <h2>⚡ Actions</h2>
+                <div class="button-grid">
+                    <button onclick="showCircuit()" class="btn btn-quantum">
+                        🔬 Show Quantum Circuit
+                    </button>
+                    <button onclick="solveQuantum()" class="btn btn-quantum">
+                        ⚛️ Solve with Grover DP
+                    </button>
+                    <button onclick="showClassicalOptions()" class="btn btn-classical">
+                        🖥️ Solve with Classical
+                    </button>
+                    <button onclick="visualizeResults()" class="btn btn-viz">
+                        📈 Visualize Results
+                    </button>
+                    <button onclick="saveResults()" class="btn btn-save">
+                        💾 Save Results
+                    </button>
+                </div>
+            </section>
+
+            <!-- Classical Algorithm Options -->
+            <div id="classicalOptions" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <span class="close" onclick="closeClassicalOptions()">&times;</span>
+                    <h2>Select Classical Algorithm</h2>
+                    <button onclick="solveClassical('held_karp')" class="btn">Held-Karp DP</button>
+                    <button onclick="solveClassical('branch_bound')" class="btn">Branch & Bound</button>
+                    <button onclick="solveClassical('greedy')" class="btn">Greedy/Nearest Neighbor</button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <section class="card">
+                <h2>📋 Results</h2>
+                <div id="resultsArea" class="results-container">
+                    <p style="text-align: center; color: #666;">
+                        Run algorithms to see results here
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
